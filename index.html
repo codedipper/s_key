@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>S Key</title>
+    <style>
+      button {
+        background-color: skyblue;
+        border: none;
+        padding: 30px 42px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 50px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+      
+      div, p {
+        font-size: 40px;
+        text-align: center;
+      }
+    </style>
+  </head>  
+  <body>
+    <div>
+      <button onclick="getLowercaseS()">Press to get lowercase "s".</button>
+      <br>
+      <button onclick="getUppercaseS()">Press to get uppercase "s".</button>
+    </div>
+    <p>Placeholder for letters:<br> 
+      <input id="lowercase" value="s" readonly="" />
+      <input id="uppercase" value="S" readonly="" />
+    </p>
+    <script>
+      const lowercaseLetter = document.querySelector("#lowercase");
+      const uppercaseLetter = document.querySelector("#uppercase");
+      
+      function getLowercaseS(){
+        lowercaseLetter.select();
+        lowercaseLetter.setSelectionRange(0, 1);
+        document.execCommand("copy");
+      }
+      
+      function getUppercaseS(){
+        uppercaseLetter.select();
+        uppercaseLetter.setSelectionRange(0, 1);
+        document.execCommand("copy");
+      }
+    </script>
+  </body>
+</html>
